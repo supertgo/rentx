@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable import/prefer-default-export */
 
-import { CategorieRespository } from '../repositories/CategorieRespository';
+import { ICategoryRepository } from '../repositories/ICategoryRepository';
 
 interface IRequest {
   name: string;
@@ -9,7 +9,7 @@ interface IRequest {
 }
 
 class CreateCategoryService {
-  constructor(private categoriesRepository: CategorieRespository) {}
+  constructor(private categoriesRepository: ICategoryRepository) {}
 
   execute({ name, description }: IRequest) {
     const categoryAlereadyExists = this.categoriesRepository.findByName(name);

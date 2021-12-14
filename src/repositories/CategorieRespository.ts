@@ -1,12 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import Category from '../models/category';
+import { ICategoryRepository, ICreateCategoryDTO } from './ICategoryRepository';
 
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
-
-class CategorieRespository {
+class CategorieRespository implements ICategoryRepository {
   private categories: Category[];
 
   constructor() {

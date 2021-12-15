@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-constructor */
-/* eslint-disable import/prefer-default-export */
 
 import { ICategoryRepository } from '../repositories/ICategoryRepository';
 

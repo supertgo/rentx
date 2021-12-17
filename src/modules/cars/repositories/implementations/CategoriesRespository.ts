@@ -1,6 +1,9 @@
 /* eslint-disable import/prefer-default-export */
-import Category from '../models/category';
-import { ICategoryRepository, ICreateCategoryDTO } from './ICategoryRepository';
+import Category from '../../models/category';
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO
+} from '../ICategoryRepository';
 
 class CategoriesRespository implements ICategoryRepository {
   private categories: Category[];

@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import Category from '../models/category';
+import Category from '../entities/category';
 
 interface ICreateCategoryDTO {
   name: string;

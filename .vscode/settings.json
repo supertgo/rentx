@@ -4,6 +4,7 @@
     "migrations",
     "model",
     "specification",
-    "swagger"
+    "swagger",
+    "users"
   ]
 }

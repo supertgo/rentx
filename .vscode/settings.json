@@ -3,6 +3,7 @@
     "docker",
     "migrations",
     "model",
-    "specification"
+    "specification",
+    "swagger"
   ]
 }

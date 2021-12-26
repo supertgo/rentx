@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 
 import { inject, injectable } from 'tsyringe';
+import { AppError } from '../../../../errors/AppError';
 
 import { ICategoryRepository } from '../../repositories/ICategoryRepository';
 
@@ -22,7 +23,7 @@ class CreateCategoryUseCase {
     );
 
     if (categoryAlereadyExists) {
-      throw new Error('This category already exists!');
+      throw new AppError('This category already exists!');
     }
 
     this.categoriesRepository.create({ name, description });

@@ -5,6 +5,7 @@
     "model",
     "specification",
     "swagger",
-    "users"
+    "users",
+    "erros"
   ]
 }

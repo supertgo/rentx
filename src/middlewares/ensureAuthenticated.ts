@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { NextFunction, Request } from 'express';
+import { NextFunction, Response, Request } from 'express';
 import { verify } from 'jsonwebtoken';
 import { AppError } from '../errors/AppError';
 import { UsersRepository } from '../modules/accounts/repositories/implementations/UserRepository';
@@ -33,6 +33,10 @@ export async function ensureAuthenticated(
     if (!user) {
       throw new AppError('User doest no exists', 401);
     }
+
+    req.user = {
+      id: user_id
+    };
 
     next();
   } catch {

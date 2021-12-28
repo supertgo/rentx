@@ -6,6 +6,7 @@
     "specification",
     "swagger",
     "users",
-    "erros"
+    "erros",
+    "jest"
   ]
 }

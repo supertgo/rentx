@@ -1,10 +1,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable class-methods-use-this */
 import { getRepository, Repository } from 'typeorm';
-
-import { User } from '../../entities/User';
+import { User } from '@modules/accounts/entities/User';
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
 import { IUsersRepository } from '../IUsersRepository';
-import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;

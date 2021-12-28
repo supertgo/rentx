@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import { inject, injectable } from 'tsyringe';
-import { Category } from '../../entities/Category';
-import { ICategoryRepository } from '../../repositories/ICategoryRepository';
+
+import { ICategoryRepository } from '@modules/cars/repositories/ICategoryRepository';
+import { Category } from '@modules/cars/entities/Category';
 
 @injectable()
 class ListCategoriesUseCase {

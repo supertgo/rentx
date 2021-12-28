@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 
+import { AppError } from '@errors/AppError';
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger.json';
 import { router } from './routes';
@@ -10,7 +11,6 @@ import { router } from './routes';
 import './database';
 
 import './shared/container';
-import { AppError } from './errors/AppError';
 
 const app = express();
 

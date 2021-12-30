@@ -1,10 +1,10 @@
 /* eslint-disable import/prefer-default-export */
-import { getRepository, Repository } from 'typeorm';
-import { Category } from '../../entities/Category';
 import {
   ICategoryRepository,
   ICreateCategoryDTO
-} from '../ICategoryRepository';
+} from '@modules/cars/repositories/ICategoryRepository';
+import { getRepository, Repository } from 'typeorm';
+import { Category } from '../entities/Category';
 
 class CategoriesRepository implements ICategoryRepository {
   private repository: Repository<Category>;

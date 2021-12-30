@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Category } from '../entities/Category';
+import { Category } from '../infra/typeorm/entities/Category';
 
 interface ICreateCategoryDTO {
   name: string;

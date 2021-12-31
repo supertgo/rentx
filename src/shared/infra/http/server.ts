@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
 import 'reflect-metadata';
+import '../typeorm/index';
+import '../../container';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 

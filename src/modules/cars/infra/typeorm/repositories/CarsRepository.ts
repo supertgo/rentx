@@ -16,6 +16,7 @@ export class CarsRepository implements ICarsRepository {
     description,
     brand,
     category_id,
+    license_plate,
     daily_rate,
     fine_amount
   }: ICreateCarDTO): Promise<Car> {
@@ -24,6 +25,7 @@ export class CarsRepository implements ICarsRepository {
       description,
       brand,
       category_id,
+      license_plate,
       daily_rate,
       fine_amount
     });

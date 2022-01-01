@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { v4 as uuidV4 } from 'uuid';
 import { hash } from 'bcrypt';
 

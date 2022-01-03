@@ -15,6 +15,10 @@
   },
   "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.spec.ts"] }
+    ],
     "prettier/prettier": "error",
     "no-use-before-define": "off",
     "import/prefer-default-export": "off",

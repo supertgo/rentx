@@ -36,7 +36,7 @@ export class CreateUsers1640513063253 implements MigrationInterface {
             isUnique: true
           },
           {
-            name: 'isAdimin',
+            name: 'isAdmin',
             type: 'boolean',
             default: false
           },

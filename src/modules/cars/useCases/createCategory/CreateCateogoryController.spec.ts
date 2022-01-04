@@ -1,4 +1,4 @@
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
 import request from 'supertest';
 import { v4 as uuidV4 } from 'uuid';
 import { Connection } from 'typeorm';
@@ -31,11 +31,14 @@ describe('Create Category Controller', () => {
       email: 'admin@rentx.com.br',
       password: 'admin'
     });
-
-    const response = await request(app).post('/categories').send({
-      name: 'Category Supertest',
-      description: 'Category Supertest'
-    });
+    const { token } = responseToken.body;
+    const response = await request(app)
+      .post('/categories')
+      .send({
+        name: 'Category Supertest',
+        description: 'Category Supertest'
+      })
+      .set({ Authorization: `Bearer ${token}` });
 
     expect(response.status).toBe(201);
   });

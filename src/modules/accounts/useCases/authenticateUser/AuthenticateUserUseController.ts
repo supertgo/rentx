@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import { compare } from 'bcrypt';
+import { compare } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 import { sign } from 'jsonwebtoken';
 

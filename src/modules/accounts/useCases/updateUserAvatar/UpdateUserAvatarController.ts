@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
 import { container } from 'tsyringe';
-/* eslint-disable class-methods-use-this */
+
 import { Request, Response } from 'express';
 import { UpdateUserAvatarUseCase } from './UpdateUserAvatarUseCase';
 

@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable class-methods-use-this */
+
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { deleteFile } from '@utils/file';
 import { inject, injectable } from 'tsyringe';

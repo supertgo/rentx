@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable class-methods-use-this */
 import { getRepository, Repository } from 'typeorm';
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';

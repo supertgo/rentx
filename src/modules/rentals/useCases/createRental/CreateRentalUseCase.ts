@@ -1,5 +1,4 @@
 /* eslint-disable no-useless-constructor */
-/* eslint-disable camelcase */
 
 import { inject, injectable } from 'tsyringe';
 

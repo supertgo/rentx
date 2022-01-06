@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { IUsersRepository } from '../IUsersRepository';

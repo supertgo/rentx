@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable class-methods-use-this */
+
 import { ICreateCarDTO } from '@modules/cars/dtos/ICreateCarDto';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '../ICarsRepository';

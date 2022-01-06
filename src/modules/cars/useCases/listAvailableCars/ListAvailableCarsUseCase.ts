@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable camelcase */
 /* eslint-disable no-useless-constructor */
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';

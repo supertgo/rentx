@@ -1,4 +1,4 @@
-/* eslint-disable class-methods-use-this */
+
 /* eslint-disable no-useless-constructor */
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';

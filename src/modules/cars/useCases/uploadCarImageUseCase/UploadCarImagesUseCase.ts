@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-useless-constructor */
 import { ICarsImagesRepository } from '@modules/cars/repositories/ICarsImagesRepository';
 import { inject, injectable } from 'tsyringe';

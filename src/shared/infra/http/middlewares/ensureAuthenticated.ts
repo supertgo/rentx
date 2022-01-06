@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { AppError } from '@shared/errors/AppError';
 import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/UserRepository';
 import { NextFunction, Response, Request } from 'express';

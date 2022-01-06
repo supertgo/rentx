@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable class-methods-use-this */
+
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 

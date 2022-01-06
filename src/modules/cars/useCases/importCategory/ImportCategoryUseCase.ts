@@ -1,4 +1,4 @@
-/* eslint-disable class-methods-use-this */
+
 /* eslint-disable no-useless-constructor */
 
 import { parse } from 'csv-parse';

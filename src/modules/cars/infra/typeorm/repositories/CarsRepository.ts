@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ICreateCarDTO } from '@modules/cars/dtos/ICreateCarDto';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 import { getRepository, Repository } from 'typeorm';

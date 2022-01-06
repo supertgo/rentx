@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-useless-constructor */
-/* eslint-disable class-methods-use-this */
+
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 import { AppError } from '@shared/errors/AppError';

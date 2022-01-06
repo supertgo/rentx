@@ -1,5 +1,4 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable camelcase */
+
 import { container } from 'tsyringe';
 import { Request, Response } from 'express';
 import { UploadCarImagesUseCase } from './UploadCarImagesUseCase';

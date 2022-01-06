@@ -37,6 +37,12 @@ export class RentalsRepository implements IRentalsRepository {
     return rental;
   }
 
+  findByUserId(user_id: string): Promise<Rental[]> {
+    const rentals = this.repository.find({ user_id });
+
+    return rentals;
+  }
+
   async findOpenRentalCarById(car_id: string): Promise<Rental> {
     const rentalOpenByCar = await this.repository.findOne({
       where: { car_id, end_date: null }

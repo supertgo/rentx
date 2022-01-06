@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-constructor */
+
 import { inject, injectable } from 'tsyringe';
 
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';

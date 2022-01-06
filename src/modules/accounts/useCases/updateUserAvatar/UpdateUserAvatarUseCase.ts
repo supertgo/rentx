@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-constructor */
+
 
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { deleteFile } from '@utils/file';

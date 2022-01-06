@@ -1,5 +1,5 @@
 
-/* eslint-disable no-useless-constructor */
+
 
 import { parse } from 'csv-parse';
 import fs from 'fs';

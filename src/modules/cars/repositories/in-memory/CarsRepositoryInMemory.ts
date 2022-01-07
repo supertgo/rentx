@@ -1,4 +1,3 @@
-
 import { ICreateCarDTO } from '@modules/cars/dtos/ICreateCarDto';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '../ICarsRepository';

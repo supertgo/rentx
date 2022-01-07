@@ -1,5 +1,3 @@
-
-
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 import { AppError } from '@shared/errors/AppError';
@@ -36,7 +34,7 @@ class CreateCarUseCase {
     );
 
     if (carAlreadyExistis) {
-      throw new AppError('This license_plate plate already exists!');
+      throw new AppError('This license plate plate already exists!');
     }
 
     const car = await this.carsRepository.create({

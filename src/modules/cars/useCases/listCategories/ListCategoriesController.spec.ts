@@ -31,6 +31,7 @@ describe('Create Category Controller', () => {
       email: 'admin@rentx.com.br',
       password: 'admin'
     });
+
     const { token } = responseToken.body;
     await request(app)
       .post('/categories')

@@ -36,31 +36,31 @@ describe('Authenticate User', () => {
   });
 
   it('should not be able to authenticate an unexist user', async () => {
-    expect(async () => {
-      await authenticateUserUseCase.execute({
+    await expect(
+      authenticateUserUseCase.execute({
         email: 'false@email.com',
         password: 'wrongpassword'
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError('Email or password incorrect'));
   });
 
   it('should be able to authenticate an user with wrong email', async () => {
-    expect(async () => {
-      await createUserUseCase.execute(user);
-      await authenticateUserUseCase.execute({
+    await createUserUseCase.execute(user);
+    await expect(
+      authenticateUserUseCase.execute({
         email: 'wrong@email.com',
         password: user.password
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError('Email or password incorrect'));
   });
 
   it('should be able to authenticate an user with wrong password', async () => {
-    expect(async () => {
-      await createUserUseCase.execute(user);
-      await authenticateUserUseCase.execute({
+    await createUserUseCase.execute(user);
+    await expect(
+      authenticateUserUseCase.execute({
         email: user.email,
         password: 'wrong password'
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toEqual(new AppError('Email or password incorrect'));
   });
 });

@@ -1,4 +1,3 @@
-
 import { compare } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 import { sign } from 'jsonwebtoken';
@@ -43,7 +42,7 @@ class AuthenticateUserUseCase {
       expiresIn: '1d'
     });
 
-    const tokaneReturn: IResponse = {
+    const tokenReturn: IResponse = {
       token,
       user: {
         name: user.name,
@@ -51,7 +50,7 @@ class AuthenticateUserUseCase {
       }
     };
 
-    return tokaneReturn;
+    return tokenReturn;
   }
 }
 

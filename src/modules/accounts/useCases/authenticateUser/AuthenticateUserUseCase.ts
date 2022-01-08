@@ -1,22 +1,88 @@
+import { compare } from 'bcryptjs';
+import { inject, injectable } from 'tsyringe';
+import { sign } from 'jsonwebtoken';
 
-import { container } from 'tsyringe';
-import { Request, Response } from 'express';
+import { AppError } from '@shared/errors/AppError';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import auth from '@config/auth';
+import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider';
+import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
 
-import { AuthenticateUserUseCase } from './AuthenticateUserUseController';
+interface IRequest {
+  email: string;
+  password: string;
+}
 
-class AuthenticateUserController {
-  async handle(req: Request, res: Response): Promise<Response> {
-    const { email, password } = req.body;
+interface IResponse {
+  user: {
+    name: string;
+    email: string;
+  };
+  token: string;
+  refresh_token: string;
+}
 
-    const authtenticateUserUseCase = container.resolve(AuthenticateUserUseCase);
+@injectable()
+class AuthenticateUserUseCase {
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+    @inject('UsersTokensRepository')
+    private usersTokensRepository: IUsersTokensRepository,
+    @inject('DayjsDateProvider')
+    private dateProvider: IDateProvider
+  ) {}
 
-    const token = await authtenticateUserUseCase.execute({
-      email,
-      password
+  async execute({ email, password }: IRequest): Promise<IResponse> {
+    const user = await this.usersRepository.findByEmail(email);
+    const {
+      expires_in_refresh_token,
+      expires_in_token,
+      expires_refresh_token_days,
+      secret_token,
+      secret_refresh_token
+    } = auth;
+
+    if (!user) {
+      throw new AppError('Email or password incorrect');
+    }
+
+    const passwordMatch = await compare(password, user.password);
+    if (!passwordMatch) {
+      throw new AppError('Email or password incorrect');
+    }
+
+    const token = sign({}, secret_token, {
+      subject: user.id,
+      expiresIn: auth.expires_in_token
     });
 
-    return res.json(token);
+    const refresh_token = sign({ email }, secret_refresh_token, {
+      subject: user.id,
+      expiresIn: expires_in_refresh_token
+    });
+
+    const refresh_token_expires_date = this.dateProvider.addDays(
+      expires_refresh_token_days
+    );
+
+    await this.usersTokensRepository.create({
+      refresh_token,
+      user_id: user.id,
+      expires_date: refresh_token_expires_date
+    });
+
+    const tokenReturn: IResponse = {
+      token,
+      user: {
+        name: user.name,
+        email: user.email
+      },
+      refresh_token
+    };
+
+    return tokenReturn;
   }
 }
 
-export { AuthenticateUserController };
+export { AuthenticateUserUseCase };

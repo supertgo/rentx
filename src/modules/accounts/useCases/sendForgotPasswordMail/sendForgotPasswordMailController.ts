@@ -3,8 +3,8 @@ import { container } from 'tsyringe';
 
 import { SendForgotPasswordMailUseCase } from './SendForgotPasswordMailUseCase';
 
-export class sendForgotPasswordMailController {
-  async execute(req: Request, res: Response): Promise<Response> {
+export class SendForgotPasswordMailController {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { email } = req.body;
     const sendForgotPasswordMailUseCase = container.resolve(
       SendForgotPasswordMailUseCase
